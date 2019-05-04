@@ -3,7 +3,8 @@
 
 //Using SDL and standard IO
 #include <SDL2/SDL.h>
-#include <stdio.h>
+#include <iostream>
+#include "primitives/primitives.hpp"
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
@@ -19,13 +20,13 @@ bool loadMedia();
 void close();
 
 //The window we'll be rendering to
-SDL_Window* gWindow = NULL;
+SDL_Window *gWindow = NULL;
 
 //The surface contained by the window
-SDL_Surface* gScreenSurface = NULL;
+SDL_Surface *gScreenSurface = NULL;
 
 //The image we will load and show on the screen
-SDL_Surface* gXOut = NULL;
+SDL_Surface *gXOut = NULL;
 
 bool init()
 {
@@ -89,6 +90,11 @@ void close()
 
 int main( int argc, char* args[] )
 {
+	int a = 12;
+	int b = 2;
+	std::cout << "The sum of " << a << " and " << b << " is " << add(a, b) << '\n';
+	Vector2 v2(3, 4);
+	std::cout << v2.x << " " << v2.y << '\n';
 	//Start up SDL and create window
 	if( !init() )
 	{

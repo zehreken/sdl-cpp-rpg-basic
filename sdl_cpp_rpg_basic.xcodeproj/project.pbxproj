@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		306A98F2227CC04F0018DF21 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 306A98F1227CC04F0018DF21 /* main.cpp */; };
 		30D9E232227CC50600D94335 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D9E231227CC50600D94335 /* SDL2.framework */; };
+		30FE463F227D9BF7008E7E29 /* primitives.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30FE463D227D9BF7008E7E29 /* primitives.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,8 @@
 		306A98EE227CC04F0018DF21 /* sdl_cpp_rpg_basic */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sdl_cpp_rpg_basic; sourceTree = BUILT_PRODUCTS_DIR; };
 		306A98F1227CC04F0018DF21 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; usesTabs = 1; };
 		30D9E231227CC50600D94335 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		30FE463D227D9BF7008E7E29 /* primitives.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = primitives.cpp; sourceTree = "<group>"; };
+		30FE463E227D9BF7008E7E29 /* primitives.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = primitives.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,7 @@
 		306A98F0227CC04F0018DF21 /* sdl_cpp_rpg_basic */ = {
 			isa = PBXGroup;
 			children = (
+				30FE463C227D9BA7008E7E29 /* primitives */,
 				306A98F1227CC04F0018DF21 /* main.cpp */,
 			);
 			path = sdl_cpp_rpg_basic;
@@ -74,6 +78,15 @@
 				30D9E231227CC50600D94335 /* SDL2.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		30FE463C227D9BA7008E7E29 /* primitives */ = {
+			isa = PBXGroup;
+			children = (
+				30FE463D227D9BF7008E7E29 /* primitives.cpp */,
+				30FE463E227D9BF7008E7E29 /* primitives.hpp */,
+			);
+			path = primitives;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				306A98F2227CC04F0018DF21 /* main.cpp in Sources */,
+				30FE463F227D9BF7008E7E29 /* primitives.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
