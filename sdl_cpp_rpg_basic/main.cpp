@@ -5,8 +5,8 @@
 #include "primitives/primitives.hpp"
 
 // Screen dimension constants
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
+const int SCREEN_WIDTH = 968;
+const int SCREEN_HEIGHT = 526;
 
 // Starts up SDL and creates window
 bool init();
@@ -206,7 +206,11 @@ int main( int argc, char* args[] )
 				SDL_RenderClear(renderer);
 				
 				// Render texture to screen
-				SDL_RenderCopy(renderer, texture, NULL, NULL);
+				SDL_Rect rect;
+				rect.x = rect.y = 0;
+				rect.w = 968 * 2;
+				rect.h = 526 * 2;
+				SDL_RenderCopy(renderer, texture, NULL, &rect);
 				
 				// Update screen
 				SDL_RenderPresent(renderer);
