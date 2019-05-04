@@ -1,32 +1,33 @@
-/*This source code copyrighted by Lazy Foo' Productions (2004-2019)
- and may not be redistributed without written permission.*/
-
 //Using SDL and standard IO
 #include <SDL2/SDL.h>
+#include <SDL2_image/SDL_image.h>
 #include <iostream>
 #include "primitives/primitives.hpp"
 
-//Screen dimension constants
+// Screen dimension constants
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
 
-//Starts up SDL and creates window
+// Starts up SDL and creates window
 bool init();
 
-//Loads media
+// Loads media
 bool loadMedia();
 
-//Frees media and shuts down SDL
+// Frees media and shuts down SDL
 void close();
 
-//The window we'll be rendering to
-SDL_Window *gWindow = NULL;
+// Loads image as texture
+SDL_Texture *loadTexture(std::string path);
 
-//The surface contained by the window
-SDL_Surface *gScreenSurface = NULL;
+// The window we'll be rendering to
+SDL_Window *window = NULL;
 
-//The image we will load and show on the screen
-SDL_Surface *gXOut = NULL;
+// The window renderer
+SDL_Renderer *renderer = NULL;
+
+// Current displayed texture
+SDL_Texture *texture = NULL;
 
 enum KeyPressSurfaces
 {
@@ -52,20 +53,61 @@ bool init()
 	else
 	{
 		//Create window
-		gWindow = SDL_CreateWindow( "SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
-		if( gWindow == NULL )
+		window = SDL_CreateWindow( "SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+		if( window == NULL )
 		{
 			printf( "Window could not be created! SDL_Error: %s\n", SDL_GetError() );
 			success = false;
 		}
 		else
 		{
-			//Get window surface
-			gScreenSurface = SDL_GetWindowSurface( gWindow );
+			renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+			if (renderer == NULL)
+			{
+				printf("Renderer could not be created! SDL Error: %s\n", SDL_GetError());
+				success = false;
+			}
+			else
+			{
+				SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+				
+				int imgFlags = IMG_INIT_PNG;
+				if (!(IMG_Init(imgFlags) & imgFlags))
+				{
+					printf( "SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError() );
+					success = false;
+				}
+			}
 		}
 	}
 	
 	return success;
+}
+
+SDL_Texture *loadTexture(std::string path)
+{
+	SDL_Texture *newTexture = NULL;
+	
+	SDL_Surface *newSurface = IMG_Load(path.c_str());
+	
+	if(newSurface == NULL)
+	{
+		printf( "Unable to load image %s! SDL_image Error: %s\n", path.c_str(), IMG_GetError() );
+	}
+	else
+	{
+		//Create texture from surface pixels
+		newTexture = SDL_CreateTextureFromSurface(renderer, newSurface);
+		if(newTexture == NULL)
+		{
+			printf( "Unable to create texture from %s! SDL Error: %s\n", path.c_str(), SDL_GetError() );
+		}
+		
+		//Get rid of old loaded surface
+		SDL_FreeSurface(newSurface);
+	}
+	
+	return newTexture;
 }
 
 bool loadMedia()
@@ -74,10 +116,10 @@ bool loadMedia()
 	bool success = true;
 	
 	//Load splash image
-	gXOut = SDL_LoadBMP( "x.bmp" );
-	if( gXOut == NULL )
+	texture = loadTexture("sprites.png");
+	if(texture == NULL)
 	{
-		printf( "Unable to load image %s! SDL Error: %s\n", "x.bmp", SDL_GetError() );
+		printf( "Unable to load image %s! SDL Error: %s\n", "sprites.png", SDL_GetError() );
 		success = false;
 	}
 	
@@ -86,15 +128,15 @@ bool loadMedia()
 
 void close()
 {
-	//Deallocate surface
-	SDL_FreeSurface( gXOut );
-	gXOut = NULL;
+	SDL_DestroyTexture(texture);
+	texture = NULL;
 	
-	//Destroy window
-	SDL_DestroyWindow( gWindow );
-	gWindow = NULL;
+	SDL_DestroyRenderer(renderer);
+	renderer = NULL;
+	SDL_DestroyWindow(window);
+	window = NULL;
 	
-	//Quit SDL subsystems
+	IMG_Quit();
 	SDL_Quit();
 }
 
@@ -160,11 +202,14 @@ int main( int argc, char* args[] )
 					}
 				}
 				
-				//Apply the image
-				SDL_BlitSurface( gXOut, NULL, gScreenSurface, NULL );
+				// Clear screen
+				SDL_RenderClear(renderer);
 				
-				//Update the surface
-				SDL_UpdateWindowSurface( gWindow );
+				// Render texture to screen
+				SDL_RenderCopy(renderer, texture, NULL, NULL);
+				
+				// Update screen
+				SDL_RenderPresent(renderer);
 			}
 		}
 	}
