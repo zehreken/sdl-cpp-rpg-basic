@@ -93,7 +93,7 @@ int main( int argc, char* args[] )
 	int a = 12;
 	int b = 2;
 	std::cout << "The sum of " << a << " and " << b << " is " << add(a, b) << '\n';
-	Vector2 v2(3, 4);
+	Vector2 v2;
 	std::cout << v2.x << " " << v2.y << '\n';
 	//Start up SDL and create window
 	if( !init() )
