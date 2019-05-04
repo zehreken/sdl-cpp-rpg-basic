@@ -10,6 +10,7 @@
 		306A98F2227CC04F0018DF21 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 306A98F1227CC04F0018DF21 /* main.cpp */; };
 		30D9E232227CC50600D94335 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D9E231227CC50600D94335 /* SDL2.framework */; };
 		30FE463F227D9BF7008E7E29 /* primitives.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30FE463D227D9BF7008E7E29 /* primitives.cpp */; };
+		30FE4641227DC974008E7E29 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30FE4640227DC974008E7E29 /* SDL2_image.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +31,7 @@
 		30D9E231227CC50600D94335 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 		30FE463D227D9BF7008E7E29 /* primitives.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = primitives.cpp; sourceTree = "<group>"; };
 		30FE463E227D9BF7008E7E29 /* primitives.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = primitives.hpp; sourceTree = "<group>"; };
+		30FE4640227DC974008E7E29 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30FE4641227DC974008E7E29 /* SDL2_image.framework in Frameworks */,
 				30D9E232227CC50600D94335 /* SDL2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,6 +78,7 @@
 		30D9E230227CC50500D94335 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				30FE4640227DC974008E7E29 /* SDL2_image.framework */,
 				30D9E231227CC50600D94335 /* SDL2.framework */,
 			);
 			name = Frameworks;

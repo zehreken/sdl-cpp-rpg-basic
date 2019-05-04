@@ -28,6 +28,16 @@ SDL_Surface *gScreenSurface = NULL;
 //The image we will load and show on the screen
 SDL_Surface *gXOut = NULL;
 
+enum KeyPressSurfaces
+{
+	KEY_PRESS_SURFACE_DEFAULT,
+	KEY_PRESS_SURFACE_UP,
+	KEY_PRESS_SURFACE_DOWN,
+	KEY_PRESS_SURFACE_LEFT,
+	KEY_PRESS_SURFACE_RIGHT,
+	KEY_PRESS_SURFACE_TOTAL
+};
+
 bool init()
 {
 	//Initialization flag
@@ -67,7 +77,7 @@ bool loadMedia()
 	gXOut = SDL_LoadBMP( "x.bmp" );
 	if( gXOut == NULL )
 	{
-		printf( "Unable to load image %s! SDL Error: %s\n", "03_event_driven_programming/x.bmp", SDL_GetError() );
+		printf( "Unable to load image %s! SDL Error: %s\n", "x.bmp", SDL_GetError() );
 		success = false;
 	}
 	
@@ -125,9 +135,28 @@ int main( int argc, char* args[] )
 				while( SDL_PollEvent( &e ) != 0 )
 				{
 					//User requests quit
-					if( e.type == SDL_QUIT )
+					if(e.type == SDL_QUIT)
 					{
 						quit = true;
+					}
+					else if (e.type == SDL_KEYDOWN)
+					{
+						switch (e.key.keysym.sym) {
+							case SDLK_w:
+								std::cout << "up" << '\n';
+								break;
+							case SDLK_a:
+								std::cout << "left" << '\n';
+								break;
+							case SDLK_s:
+								std::cout << "down" << '\n';
+								break;
+							case SDLK_d:
+								std::cout << "right" << '\n';
+								break;
+							default:
+								break;
+						}
 					}
 				}
 				
