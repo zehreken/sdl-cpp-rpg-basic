@@ -95,6 +95,9 @@ int main( int argc, char* args[] )
 	std::cout << "The sum of " << a << " and " << b << " is " << add(a, b) << '\n';
 	Vector2 v2;
 	std::cout << v2.x << " " << v2.y << '\n';
+	
+	Vector3 v3;
+	std::cout << v3.z << '\n';
 	//Start up SDL and create window
 	if( !init() )
 	{
