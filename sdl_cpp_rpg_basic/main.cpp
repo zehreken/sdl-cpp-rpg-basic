@@ -3,6 +3,7 @@
 #include <SDL2_image/SDL_image.h>
 #include <iostream>
 #include "primitives/primitives.hpp"
+#include "primitives/textureWrapper.hpp"
 
 // Screen dimension constants
 const int SCREEN_WIDTH = 968;
@@ -53,7 +54,7 @@ bool init()
 	else
 	{
 		//Create window
-		window = SDL_CreateWindow( "SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+		window = SDL_CreateWindow("sdl_cpp_rpg_basic", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
 		if( window == NULL )
 		{
 			printf( "Window could not be created! SDL_Error: %s\n", SDL_GetError() );
@@ -110,6 +111,7 @@ SDL_Texture *loadTexture(std::string path)
 	return newTexture;
 }
 
+LTexture colorKeyTexture;
 bool loadMedia()
 {
 	//Loading success flag
@@ -123,11 +125,17 @@ bool loadMedia()
 		success = false;
 	}
 	
+	if (!colorKeyTexture.loadFromFile(renderer, "sprites_magenta.png"))
+	{
+		success = false;
+	}
+	
 	return success;
 }
 
 void close()
 {
+	colorKeyTexture.free();
 	SDL_DestroyTexture(texture);
 	texture = NULL;
 	
@@ -205,12 +213,14 @@ int main( int argc, char* args[] )
 				// Clear screen
 				SDL_RenderClear(renderer);
 				
+				colorKeyTexture.render(renderer, 0, 0);
+				
 				// Render texture to screen
-				SDL_Rect rect;
-				rect.x = rect.y = 0;
-				rect.w = 968 * 2;
-				rect.h = 526 * 2;
-				SDL_RenderCopy(renderer, texture, NULL, &rect);
+//				SDL_Rect rect;
+//				rect.x = rect.y = 0;
+//				rect.w = 968 * 2;
+//				rect.h = 526 * 2;
+//				SDL_RenderCopy(renderer, texture, NULL, &rect);
 				
 				// Update screen
 				SDL_RenderPresent(renderer);
