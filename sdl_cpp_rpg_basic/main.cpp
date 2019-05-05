@@ -28,7 +28,7 @@ SDL_Window *window = NULL;
 SDL_Renderer *renderer = NULL;
 
 // Current displayed texture
-SDL_Texture *texture = NULL;
+LTexture texture;
 
 enum KeyPressSurfaces
 {
@@ -118,8 +118,7 @@ bool loadMedia()
 	bool success = true;
 	
 	//Load splash image
-	texture = loadTexture("sprites.png");
-	if(texture == NULL)
+	if(!texture.loadFromFile(renderer, "sprites.png"))
 	{
 		printf( "Unable to load image %s! SDL Error: %s\n", "sprites.png", SDL_GetError() );
 		success = false;
@@ -136,8 +135,7 @@ bool loadMedia()
 void close()
 {
 	colorKeyTexture.free();
-	SDL_DestroyTexture(texture);
-	texture = NULL;
+	texture.free();
 	
 	SDL_DestroyRenderer(renderer);
 	renderer = NULL;
@@ -213,15 +211,15 @@ int main( int argc, char* args[] )
 				// Clear screen
 				SDL_RenderClear(renderer);
 				
-				SDL_Rect clipRect = {0, 0, 16, 16};
-				colorKeyTexture.render(renderer, 0, 0, &clipRect);
+//				SDL_Rect clipRect = {0, 0, 16, 16};
+//				colorKeyTexture.render(renderer, 0, 0, &clipRect);
 				
 				// Render texture to screen
-//				SDL_Rect rect;
-//				rect.x = rect.y = 0;
-//				rect.w = 968 * 2;
-//				rect.h = 526 * 2;
-//				SDL_RenderCopy(renderer, texture, NULL, &rect);
+				SDL_Rect rect;
+				rect.x = rect.y = 0;
+				rect.w = 16;
+				rect.h = 16;
+				texture.render(renderer, 0, 0, &rect);
 				
 				// Update screen
 				SDL_RenderPresent(renderer);

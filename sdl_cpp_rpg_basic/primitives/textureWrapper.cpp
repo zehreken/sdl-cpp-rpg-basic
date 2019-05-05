@@ -33,8 +33,8 @@ bool LTexture::loadFromFile(SDL_Renderer *renderer, std::string path)
 		else
 		{
 			//Get image dimensions
-			width = newSurface->w * 2;
-			height = newSurface->h * 2;
+			width = newSurface->w;
+			height = newSurface->h;
 		}
 	}
 	
@@ -62,8 +62,10 @@ void LTexture::render(SDL_Renderer *renderer, int x, int y, SDL_Rect *clipRect)
 	
 	if (clipRect != NULL)
 	{
-		renderRect.w = clipRect->w;
-		renderRect.h = clipRect->h;
+		// The multipliers scales the texture
+		// Texture is scaled but clipping is applied on the original resolution
+		renderRect.w = clipRect->w * 4;
+		renderRect.h = clipRect->h * 4;
 	}
 	
 	SDL_RenderCopy(renderer, texture, clipRect, &renderRect);
