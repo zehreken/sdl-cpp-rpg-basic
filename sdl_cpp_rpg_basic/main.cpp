@@ -215,7 +215,10 @@ int main( int argc, char* args[] )
 //				colorKeyTexture.render(renderer, 0, 0, &clipRect);
 				
 				// Render texture to screen
-				SDL_Rect rect = rects[4];
+				SDL_Rect rect = rects[13];
+//				rect.x = rect.y = 34;
+//				rect.w = 16;
+//				rect.h = 16;
 				texture.render(renderer, 0, 0, &rect);
 				
 				// Update screen

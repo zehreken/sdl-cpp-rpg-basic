@@ -14,7 +14,7 @@ SDL_Rect *unpack()
 	{
 		for (int column = 0; column < COLUMN_COUNT; column++)
 		{
-			rects[row * COLUMN_COUNT + column] = {row * 17, column * 17, 16, 16};
+			rects[row * COLUMN_COUNT + column] = {column * 17, row * 17, 16, 16};
 		}
 	}
 	
