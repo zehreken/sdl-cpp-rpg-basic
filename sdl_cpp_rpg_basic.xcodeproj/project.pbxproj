@@ -10,6 +10,7 @@
 		306A98F2227CC04F0018DF21 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 306A98F1227CC04F0018DF21 /* main.cpp */; };
 		30D9E232227CC50600D94335 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D9E231227CC50600D94335 /* SDL2.framework */; };
 		30DAED66227F34190022B83F /* textureWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30DAED64227F34190022B83F /* textureWrapper.cpp */; };
+		30DAED6A227F778B0022B83F /* textureUnpacker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30DAED68227F778B0022B83F /* textureUnpacker.cpp */; };
 		30FE463F227D9BF7008E7E29 /* primitives.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30FE463D227D9BF7008E7E29 /* primitives.cpp */; };
 		30FE4641227DC974008E7E29 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30FE4640227DC974008E7E29 /* SDL2_image.framework */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,8 @@
 		30D9E231227CC50600D94335 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 		30DAED64227F34190022B83F /* textureWrapper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = textureWrapper.cpp; sourceTree = "<group>"; };
 		30DAED65227F34190022B83F /* textureWrapper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = textureWrapper.hpp; sourceTree = "<group>"; };
+		30DAED68227F778B0022B83F /* textureUnpacker.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = textureUnpacker.cpp; sourceTree = "<group>"; };
+		30DAED69227F778B0022B83F /* textureUnpacker.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = textureUnpacker.hpp; sourceTree = "<group>"; };
 		30FE463D227D9BF7008E7E29 /* primitives.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = primitives.cpp; sourceTree = "<group>"; };
 		30FE463E227D9BF7008E7E29 /* primitives.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = primitives.hpp; sourceTree = "<group>"; };
 		30FE4640227DC974008E7E29 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
@@ -72,6 +75,7 @@
 		306A98F0227CC04F0018DF21 /* sdl_cpp_rpg_basic */ = {
 			isa = PBXGroup;
 			children = (
+				30DAED67227F774E0022B83F /* utils */,
 				30FE463C227D9BA7008E7E29 /* primitives */,
 				306A98F1227CC04F0018DF21 /* main.cpp */,
 			);
@@ -85,6 +89,15 @@
 				30D9E231227CC50600D94335 /* SDL2.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		30DAED67227F774E0022B83F /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				30DAED68227F778B0022B83F /* textureUnpacker.cpp */,
+				30DAED69227F778B0022B83F /* textureUnpacker.hpp */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 		30FE463C227D9BA7008E7E29 /* primitives */ = {
@@ -156,6 +169,7 @@
 			files = (
 				306A98F2227CC04F0018DF21 /* main.cpp in Sources */,
 				30DAED66227F34190022B83F /* textureWrapper.cpp in Sources */,
+				30DAED6A227F778B0022B83F /* textureUnpacker.cpp in Sources */,
 				30FE463F227D9BF7008E7E29 /* primitives.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

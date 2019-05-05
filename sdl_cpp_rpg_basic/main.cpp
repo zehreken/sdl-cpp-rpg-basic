@@ -4,6 +4,7 @@
 #include <iostream>
 #include "primitives/primitives.hpp"
 #include "primitives/textureWrapper.hpp"
+#include "utils/textureUnpacker.hpp"
 
 // Screen dimension constants
 const int SCREEN_WIDTH = 968;
@@ -154,8 +155,7 @@ int main( int argc, char* args[] )
 	Vector2 v2;
 	std::cout << v2.x << " " << v2.y << '\n';
 	
-	Vector3 v3;
-	std::cout << v3.z << '\n';
+	SDL_Rect *rects = unpack();
 	//Start up SDL and create window
 	if( !init() )
 	{
@@ -215,10 +215,7 @@ int main( int argc, char* args[] )
 //				colorKeyTexture.render(renderer, 0, 0, &clipRect);
 				
 				// Render texture to screen
-				SDL_Rect rect;
-				rect.x = rect.y = 0;
-				rect.w = 16;
-				rect.h = 16;
+				SDL_Rect rect = rects[4];
 				texture.render(renderer, 0, 0, &rect);
 				
 				// Update screen
