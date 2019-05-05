@@ -7,8 +7,8 @@
 #include "utils/textureUnpacker.hpp"
 
 // Screen dimension constants
-const int SCREEN_WIDTH = 968;
-const int SCREEN_HEIGHT = 526;
+const int SCREEN_WIDTH = 960;
+const int SCREEN_HEIGHT = 540;
 
 // Starts up SDL and creates window
 bool init();
@@ -223,6 +223,9 @@ int main( int argc, char* args[] )
 				
 				// Update screen
 				SDL_RenderPresent(renderer);
+				
+				// Delay a bit to release CPU
+				SDL_Delay(10);
 			}
 		}
 	}
