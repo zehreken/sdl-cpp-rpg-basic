@@ -14,7 +14,7 @@ public:
 	
 	void free();
 	
-	void render(SDL_Renderer *renderer, int x, int y);
+	void render(SDL_Renderer *renderer, int x, int y, SDL_Rect *clipRect = NULL);
 	
 	int getWidth();
 	int getHeight();

@@ -213,7 +213,8 @@ int main( int argc, char* args[] )
 				// Clear screen
 				SDL_RenderClear(renderer);
 				
-				colorKeyTexture.render(renderer, 0, 0);
+				SDL_Rect clipRect = {0, 0, 16, 16};
+				colorKeyTexture.render(renderer, 0, 0, &clipRect);
 				
 				// Render texture to screen
 //				SDL_Rect rect;

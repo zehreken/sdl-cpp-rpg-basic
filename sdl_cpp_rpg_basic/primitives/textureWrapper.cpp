@@ -55,11 +55,18 @@ void LTexture::free()
 	}
 }
 
-void LTexture::render(SDL_Renderer *renderer, int x, int y)
+void LTexture::render(SDL_Renderer *renderer, int x, int y, SDL_Rect *clipRect)
 {
 	//Set rendering space and render to screen
 	SDL_Rect renderRect = { x, y, width, height };
-	SDL_RenderCopy(renderer, texture, NULL, &renderRect);
+	
+	if (clipRect != NULL)
+	{
+		renderRect.w = clipRect->w;
+		renderRect.h = clipRect->h;
+	}
+	
+	SDL_RenderCopy(renderer, texture, clipRect, &renderRect);
 }
 
 int LTexture::getWidth()
