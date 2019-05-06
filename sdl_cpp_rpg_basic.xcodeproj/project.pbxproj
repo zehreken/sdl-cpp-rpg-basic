@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3068FFFE2280B712003611A0 /* grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3068FFFC2280B712003611A0 /* grid.cpp */; };
 		306A98F2227CC04F0018DF21 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 306A98F1227CC04F0018DF21 /* main.cpp */; };
 		30D9E232227CC50600D94335 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D9E231227CC50600D94335 /* SDL2.framework */; };
 		30DAED66227F34190022B83F /* textureWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30DAED64227F34190022B83F /* textureWrapper.cpp */; };
@@ -28,6 +29,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3068FFFC2280B712003611A0 /* grid.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = grid.cpp; sourceTree = "<group>"; };
+		3068FFFD2280B712003611A0 /* grid.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = grid.hpp; sourceTree = "<group>"; };
 		306A98EE227CC04F0018DF21 /* sdl_cpp_rpg_basic */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sdl_cpp_rpg_basic; sourceTree = BUILT_PRODUCTS_DIR; };
 		306A98F1227CC04F0018DF21 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; usesTabs = 1; };
 		30D9E231227CC50600D94335 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
@@ -53,6 +56,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3068FFFB2280B701003611A0 /* grid */ = {
+			isa = PBXGroup;
+			children = (
+				3068FFFC2280B712003611A0 /* grid.cpp */,
+				3068FFFD2280B712003611A0 /* grid.hpp */,
+			);
+			path = grid;
+			sourceTree = "<group>";
+		};
 		306A98E5227CC04F0018DF21 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +87,7 @@
 		306A98F0227CC04F0018DF21 /* sdl_cpp_rpg_basic */ = {
 			isa = PBXGroup;
 			children = (
+				3068FFFB2280B701003611A0 /* grid */,
 				30DAED67227F774E0022B83F /* utils */,
 				30FE463C227D9BA7008E7E29 /* primitives */,
 				306A98F1227CC04F0018DF21 /* main.cpp */,
@@ -170,6 +183,7 @@
 				306A98F2227CC04F0018DF21 /* main.cpp in Sources */,
 				30DAED66227F34190022B83F /* textureWrapper.cpp in Sources */,
 				30DAED6A227F778B0022B83F /* textureUnpacker.cpp in Sources */,
+				3068FFFE2280B712003611A0 /* grid.cpp in Sources */,
 				30FE463F227D9BF7008E7E29 /* primitives.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,7 +16,7 @@ public:
 	int x, y;
 	IntVector2();
 	IntVector2(int, int);
-	~IntVector2();
+//	~IntVector2();
 };
 
 class Vector3

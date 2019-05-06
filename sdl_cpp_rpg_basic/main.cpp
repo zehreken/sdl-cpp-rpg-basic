@@ -5,6 +5,7 @@
 #include "primitives/primitives.hpp"
 #include "primitives/textureWrapper.hpp"
 #include "utils/textureUnpacker.hpp"
+#include "grid/grid.hpp"
 
 // Screen dimension constants
 const int SCREEN_WIDTH = 960;
@@ -156,6 +157,7 @@ int main( int argc, char* args[] )
 	std::cout << v2.x << " " << v2.y << '\n';
 	
 	SDL_Rect *rects = unpack();
+	
 	//Start up SDL and create window
 	if( !init() )
 	{
@@ -175,6 +177,8 @@ int main( int argc, char* args[] )
 			
 			//Event handler
 			SDL_Event e;
+			
+			grid_init(renderer);
 			
 			//While application is running
 			while( !quit )
@@ -216,10 +220,12 @@ int main( int argc, char* args[] )
 				
 				// Render texture to screen
 				SDL_Rect rect = rects[13];
-//				rect.x = rect.y = 34;
-//				rect.w = 16;
-//				rect.h = 16;
-				texture.render(renderer, 0, 0, &rect);
+				rect.x = rect.y = 0;
+				rect.w = 16;
+				rect.h = 16;
+//				texture.render(renderer, 0, 0, &rect);
+				
+				grid_render(renderer);
 				
 				// Update screen
 				SDL_RenderPresent(renderer);
