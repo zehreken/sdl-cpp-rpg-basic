@@ -9,6 +9,7 @@ class Tile
 public:
 	LTexture *ltexture;
 	IntVector2 gridPos;
+	IntVector2 clipPos;
 	Tile();
 private:
 };
