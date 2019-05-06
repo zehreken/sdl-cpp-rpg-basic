@@ -5,6 +5,8 @@ const int ROW_COUNT = 60;
 LTexture ltexture;
 Tile tiles[COLUMN_COUNT * ROW_COUNT];
 
+Vector2 gridPos;
+
 Tile::Tile()
 {
 	ltexture = NULL;
@@ -14,6 +16,7 @@ Tile::Tile()
 
 void grid_init(SDL_Renderer *renderer)
 {
+	gridPos = {0, 0};
 	ltexture.loadFromFile(renderer, "sprites.png");
 	for (int row = 0; row < ROW_COUNT; row++)
 	{
@@ -39,9 +42,15 @@ void grid_render(SDL_Renderer *renderer)
 			clipRect.y = tile->clipPos.y;
 			clipRect.w = 16;
 			clipRect.h = 16;
-			tile->ltexture->render(renderer, column * 64, row * 64, &clipRect);
+			tile->ltexture->render(renderer, column * 64 + gridPos.x, row * 64 + gridPos.y, &clipRect);
 		}
 	}
+}
+
+void setGridPos(Vector2 delta)
+{
+	gridPos.x += delta.x;
+	gridPos.y += delta.y;
 }
 
 void grid_close()
