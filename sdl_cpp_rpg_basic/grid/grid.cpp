@@ -1,7 +1,8 @@
 #include "grid.hpp"
 
-const int COLUMN_COUNT = 10;
-const int ROW_COUNT = 6;
+const int COLUMN_COUNT = 50;
+const int ROW_COUNT = 30;
+LTexture ltexture;
 Tile tiles[COLUMN_COUNT * ROW_COUNT];
 
 Tile::Tile()
@@ -12,13 +13,12 @@ Tile::Tile()
 
 void grid_init(SDL_Renderer *renderer)
 {
+	ltexture.loadFromFile(renderer, "sprites.png");
 	for (int row = 0; row < ROW_COUNT; row++)
 	{
 		for (int column = 0; column < COLUMN_COUNT; column++)
 		{
 			Tile *tile = &tiles[row * COLUMN_COUNT + column];
-			static LTexture ltexture;
-			ltexture.loadFromFile(renderer, "sprites.png");
 			tile->ltexture = &ltexture;
 			tile->gridPos = {column, row};
 		}
