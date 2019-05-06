@@ -42,7 +42,7 @@ void grid_render(SDL_Renderer *renderer)
 			clipRect.y = tile->clipPos.y;
 			clipRect.w = 16;
 			clipRect.h = 16;
-			tile->ltexture->render(renderer, column * 64 + gridPos.x, row * 64 + gridPos.y, &clipRect);
+			tile->ltexture->render(renderer, column * 64 + (int)gridPos.x, row * 64 + (int)gridPos.y, &clipRect);
 		}
 	}
 }
