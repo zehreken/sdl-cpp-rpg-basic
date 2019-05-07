@@ -224,7 +224,7 @@ int main( int argc, char* args[] )
 				rect.w = 16;
 				rect.h = 16;
 //				texture.render(renderer, 0, 0, &rect);
-				setGridPos({-0.2, 0});
+				setGridPos({-0.5, -0.5});
 				grid_render(renderer);
 				
 				// Update screen

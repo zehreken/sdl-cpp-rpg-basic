@@ -64,8 +64,8 @@ void LTexture::render(SDL_Renderer *renderer, int x, int y, SDL_Rect *clipRect)
 	{
 		// The multipliers scales the texture
 		// Texture is scaled but clipping is applied on the original resolution
-		renderRect.w = clipRect->w * 4;
-		renderRect.h = clipRect->h * 4;
+		renderRect.w = clipRect->w * 1;
+		renderRect.h = clipRect->h * 1;
 	}
 	
 	SDL_RenderCopy(renderer, texture, clipRect, &renderRect);

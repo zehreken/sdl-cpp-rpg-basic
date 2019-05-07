@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3068FFFE2280B712003611A0 /* grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3068FFFC2280B712003611A0 /* grid.cpp */; };
 		306A98F2227CC04F0018DF21 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 306A98F1227CC04F0018DF21 /* main.cpp */; };
+		30A03328228214BC004442C5 /* perlinNoise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30A03326228214BC004442C5 /* perlinNoise.cpp */; };
 		30D9E232227CC50600D94335 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D9E231227CC50600D94335 /* SDL2.framework */; };
 		30DAED66227F34190022B83F /* textureWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30DAED64227F34190022B83F /* textureWrapper.cpp */; };
 		30DAED6A227F778B0022B83F /* textureUnpacker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30DAED68227F778B0022B83F /* textureUnpacker.cpp */; };
@@ -33,6 +34,8 @@
 		3068FFFD2280B712003611A0 /* grid.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = grid.hpp; sourceTree = "<group>"; };
 		306A98EE227CC04F0018DF21 /* sdl_cpp_rpg_basic */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sdl_cpp_rpg_basic; sourceTree = BUILT_PRODUCTS_DIR; };
 		306A98F1227CC04F0018DF21 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; usesTabs = 1; };
+		30A03326228214BC004442C5 /* perlinNoise.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = perlinNoise.cpp; sourceTree = "<group>"; };
+		30A03327228214BC004442C5 /* perlinNoise.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = perlinNoise.hpp; sourceTree = "<group>"; };
 		30D9E231227CC50600D94335 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 		30DAED64227F34190022B83F /* textureWrapper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = textureWrapper.cpp; sourceTree = "<group>"; };
 		30DAED65227F34190022B83F /* textureWrapper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = textureWrapper.hpp; sourceTree = "<group>"; };
@@ -61,6 +64,8 @@
 			children = (
 				3068FFFC2280B712003611A0 /* grid.cpp */,
 				3068FFFD2280B712003611A0 /* grid.hpp */,
+				30A03326228214BC004442C5 /* perlinNoise.cpp */,
+				30A03327228214BC004442C5 /* perlinNoise.hpp */,
 			);
 			path = grid;
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 			files = (
 				306A98F2227CC04F0018DF21 /* main.cpp in Sources */,
 				30DAED66227F34190022B83F /* textureWrapper.cpp in Sources */,
+				30A03328228214BC004442C5 /* perlinNoise.cpp in Sources */,
 				30DAED6A227F778B0022B83F /* textureUnpacker.cpp in Sources */,
 				3068FFFE2280B712003611A0 /* grid.cpp in Sources */,
 				30FE463F227D9BF7008E7E29 /* primitives.cpp in Sources */,
