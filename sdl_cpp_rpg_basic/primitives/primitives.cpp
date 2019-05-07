@@ -7,7 +7,7 @@ Vector2::Vector2(float _x, float _y)
 	x = _x;
 	y = _y;
 }
-Vector2::~Vector2() { std::cout << "Vector2 is deleted" << '\n'; }
+//Vector2::~Vector2() { std::cout << "Vector2 is deleted" << '\n'; }
 
 IntVector2::IntVector2() { x = y = 0; };
 IntVector2::IntVector2(int _x, int _y)
