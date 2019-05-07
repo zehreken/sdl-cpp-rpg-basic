@@ -196,15 +196,19 @@ int main( int argc, char* args[] )
 						switch (e.key.keysym.sym) {
 							case SDLK_w:
 								std::cout << "up" << '\n';
+								setGridPos({0, 16});
 								break;
 							case SDLK_a:
 								std::cout << "left" << '\n';
+								setGridPos({16, 0});
 								break;
 							case SDLK_s:
 								std::cout << "down" << '\n';
+								setGridPos({0, -16});
 								break;
 							case SDLK_d:
 								std::cout << "right" << '\n';
+								setGridPos({-16, 0});
 								break;
 							default:
 								break;
@@ -224,7 +228,7 @@ int main( int argc, char* args[] )
 				rect.w = 16;
 				rect.h = 16;
 //				texture.render(renderer, 0, 0, &rect);
-				setGridPos({-0.5, -0.5});
+				
 				grid_render(renderer);
 				
 				// Update screen

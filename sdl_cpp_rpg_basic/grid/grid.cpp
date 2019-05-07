@@ -1,13 +1,13 @@
 #include "grid.hpp"
 #include "perlinNoise.hpp"
 
-const int COLUMN_COUNT = 100;
-const int ROW_COUNT = 60;
+const int COLUMN_COUNT = 200;
+const int ROW_COUNT = 120;
 LTexture ltexture;
 Tile tiles[COLUMN_COUNT * ROW_COUNT];
 
 Vector2 gridPos;
-PerlinNoise pN(17);
+PerlinNoise pN(11);
 
 Tile::Tile()
 {
