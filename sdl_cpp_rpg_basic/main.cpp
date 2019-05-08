@@ -180,6 +180,7 @@ int main( int argc, char* args[] )
 			SDL_Event e;
 			
 			grid_init(renderer);
+			noiseInit();
 			
 			//While application is running
 			while( !quit )

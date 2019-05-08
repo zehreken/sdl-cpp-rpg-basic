@@ -3,6 +3,7 @@
 
 #include <SDL2/SDL.h>
 
+void noiseInit();
 void noiseDraw(SDL_Renderer *renderer);
 
 #endif /* noiseVisualizer_hpp */
