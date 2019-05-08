@@ -9,7 +9,8 @@
 
 // I ADDED AN EXTRA METHOD THAT GENERATES A NEW PERMUTATION VECTOR (THIS IS NOT PRESENT IN THE ORIGINAL IMPLEMENTATION)
 
-class PerlinNoise {
+class PerlinNoise
+{
 	// The permutation vector
 	std::vector<int> p;
 public:

@@ -11,8 +11,8 @@
 // I ADDED AN EXTRA METHOD THAT GENERATES A NEW PERMUTATION VECTOR (THIS IS NOT PRESENT IN THE ORIGINAL IMPLEMENTATION)
 
 // Initialize with the reference values for the permutation vector
-PerlinNoise::PerlinNoise() {
-	
+PerlinNoise::PerlinNoise()
+{
 	// Initialize the permutation vector with the reference values
 	p = {
 		151,160,137,91,90,15,131,13,201,95,96,53,194,233,7,225,140,36,103,30,69,142,
@@ -32,7 +32,8 @@ PerlinNoise::PerlinNoise() {
 }
 
 // Generate a new permutation vector based on the value of seed
-PerlinNoise::PerlinNoise(unsigned int seed) {
+PerlinNoise::PerlinNoise(unsigned int seed)
+{
 	p.resize(256);
 	
 	// Fill p with values from 0 to 255
@@ -48,7 +49,8 @@ PerlinNoise::PerlinNoise(unsigned int seed) {
 	p.insert(p.end(), p.begin(), p.end());
 }
 
-double PerlinNoise::noise(double x, double y, double z) {
+double PerlinNoise::noise(double x, double y, double z)
+{
 	// Find the unit cube that contains the point
 	int X = (int) floor(x) & 255;
 	int Y = (int) floor(y) & 255;
@@ -77,15 +79,18 @@ double PerlinNoise::noise(double x, double y, double z) {
 	return (res + 1.0)/2.0;
 }
 
-double PerlinNoise::fade(double t) {
+double PerlinNoise::fade(double t)
+{
 	return t * t * t * (t * (t * 6 - 15) + 10);
 }
 
-double PerlinNoise::lerp(double t, double a, double b) {
+double PerlinNoise::lerp(double t, double a, double b)
+{
 	return a + t * (b - a);
 }
 
-double PerlinNoise::grad(int hash, double x, double y, double z) {
+double PerlinNoise::grad(int hash, double x, double y, double z)
+{
 	int h = hash & 15;
 	// Convert lower 4 bits of hash into 12 gradient directions
 	double u = h < 8 ? x : y,
