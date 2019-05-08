@@ -6,6 +6,7 @@
 #include "primitives/textureWrapper.hpp"
 #include "utils/textureUnpacker.hpp"
 #include "grid/grid.hpp"
+#include "grid/noiseVisualizer.hpp"
 
 // Screen dimension constants
 const int SCREEN_WIDTH = 960;
@@ -230,6 +231,8 @@ int main( int argc, char* args[] )
 //				texture.render(renderer, 0, 0, &rect);
 				
 				grid_render(renderer);
+				
+				noiseDraw(renderer);
 				
 				// Update screen
 				SDL_RenderPresent(renderer);

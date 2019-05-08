@@ -7,7 +7,7 @@ LTexture ltexture;
 Tile tiles[COLUMN_COUNT * ROW_COUNT];
 
 Vector2 gridPos;
-PerlinNoise pN(11);
+PerlinNoise pN(0);
 
 Tile::Tile()
 {
