@@ -121,16 +121,16 @@ bool loadMedia()
 	bool success = true;
 	
 	//Load splash image
-	if(!texture.loadFromFile(renderer, "sprites.png"))
+	if(!texture.loadFromFile(renderer, "map_sheet.png"))
 	{
-		printf( "Unable to load image %s! SDL Error: %s\n", "sprites.png", SDL_GetError() );
+		printf( "Unable to load image %s! SDL Error: %s\n", "map_sheet.png", SDL_GetError() );
 		success = false;
 	}
 	
-	if (!colorKeyTexture.loadFromFile(renderer, "sprites_magenta.png"))
-	{
-		success = false;
-	}
+//	if (!colorKeyTexture.loadFromFile(renderer, "sprites_magenta.png"))
+//	{
+//		success = false;
+//	}
 	
 	return success;
 }
@@ -167,7 +167,7 @@ int main( int argc, char* args[] )
 	else
 	{
 		//Load media
-		if( !loadMedia() )
+		if(!loadMedia())
 		{
 			printf( "Failed to load media!\n" );
 		}

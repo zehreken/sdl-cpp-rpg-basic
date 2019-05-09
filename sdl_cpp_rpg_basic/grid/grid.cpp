@@ -19,7 +19,7 @@ Tile::Tile()
 void grid_init(SDL_Renderer *renderer)
 {
 	gridPos = {0, 0};
-	ltexture.loadFromFile(renderer, "sprites.png");
+	ltexture.loadFromFile(renderer, "map_sheet.png");
 	for (int row = 0; row < ROW_COUNT; row++)
 	{
 		for (int column = 0; column < COLUMN_COUNT; column++)
