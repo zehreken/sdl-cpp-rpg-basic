@@ -233,7 +233,7 @@ int main( int argc, char* args[] )
 				
 				grid_render(renderer);
 				
-				noiseDraw(renderer);
+//				noiseDraw(renderer);
 				
 				// Update screen
 				SDL_RenderPresent(renderer);

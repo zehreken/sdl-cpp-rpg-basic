@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30011DB32285F1B1005F906E /* transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30011DB12285F1B1005F906E /* transform.cpp */; };
+		30011DB62285F408005F906E /* view.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30011DB42285F408005F906E /* view.cpp */; };
 		3003F7F4228356F9000AA736 /* noiseVisualizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3003F7F2228356F9000AA736 /* noiseVisualizer.cpp */; };
 		3068FFFE2280B712003611A0 /* grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3068FFFC2280B712003611A0 /* grid.cpp */; };
 		306A98F2227CC04F0018DF21 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 306A98F1227CC04F0018DF21 /* main.cpp */; };
@@ -32,6 +34,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		30011DB12285F1B1005F906E /* transform.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = transform.cpp; sourceTree = "<group>"; };
+		30011DB22285F1B1005F906E /* transform.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = transform.hpp; sourceTree = "<group>"; };
+		30011DB42285F408005F906E /* view.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = view.cpp; sourceTree = "<group>"; };
+		30011DB52285F408005F906E /* view.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = view.hpp; sourceTree = "<group>"; };
 		3003F7F2228356F9000AA736 /* noiseVisualizer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = noiseVisualizer.cpp; sourceTree = "<group>"; };
 		3003F7F3228356F9000AA736 /* noiseVisualizer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = noiseVisualizer.hpp; sourceTree = "<group>"; };
 		3068FFFC2280B712003611A0 /* grid.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = grid.cpp; sourceTree = "<group>"; };
@@ -122,6 +128,10 @@
 			children = (
 				306DE6AF22849DF800B2C1F2 /* gameObject.cpp */,
 				306DE6B022849DF900B2C1F2 /* gameObject.hpp */,
+				30011DB12285F1B1005F906E /* transform.cpp */,
+				30011DB22285F1B1005F906E /* transform.hpp */,
+				30011DB42285F408005F906E /* view.cpp */,
+				30011DB52285F408005F906E /* view.hpp */,
 			);
 			path = gameObject;
 			sourceTree = "<group>";
@@ -213,11 +223,13 @@
 			files = (
 				306DE6B122849DF900B2C1F2 /* gameObject.cpp in Sources */,
 				306A98F2227CC04F0018DF21 /* main.cpp in Sources */,
+				30011DB32285F1B1005F906E /* transform.cpp in Sources */,
 				30DAED66227F34190022B83F /* textureWrapper.cpp in Sources */,
 				3003F7F4228356F9000AA736 /* noiseVisualizer.cpp in Sources */,
 				30A03328228214BC004442C5 /* perlinNoise.cpp in Sources */,
 				30DAED6A227F778B0022B83F /* textureUnpacker.cpp in Sources */,
 				3068FFFE2280B712003611A0 /* grid.cpp in Sources */,
+				30011DB62285F408005F906E /* view.cpp in Sources */,
 				30FE463F227D9BF7008E7E29 /* primitives.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

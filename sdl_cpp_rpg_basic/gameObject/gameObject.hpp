@@ -2,18 +2,14 @@
 #define gameObject_hpp
 
 #include "../primitives/primitives.hpp"
+#include "transform.hpp"
 
 class GameObject
 {
 public:
 	GameObject();
-	void setPosition(float x, float y);
-	void setPosition(Vector2 pos);
-	void translate(float x, float y);
-	void translate(Vector2 deltaPos);
-	Vector2 getPosition();
 private:
-	Vector2 position;
+	Transform *transform;
 };
 
 #endif /* gameObject_hpp */
