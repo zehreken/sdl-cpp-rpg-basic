@@ -7,6 +7,7 @@
 #include "utils/textureUnpacker.hpp"
 #include "grid/grid.hpp"
 #include "grid/noiseVisualizer.hpp"
+#include "gameObject/gameObject.hpp"
 
 // Screen dimension constants
 const int SCREEN_WIDTH = 960;
@@ -181,6 +182,12 @@ int main( int argc, char* args[] )
 			
 			grid_init(renderer);
 			noiseInit();
+			
+			
+			
+			GameObject go(renderer);
+			go.p_view()->p_parent()->p_view()->p_parent()->p_transform()->p_parent()->p_view()->p_parent()->p_transform()->setPosition(3, 2);
+			std::cout << "testing: " << go.p_view()->p_parent()->p_transform()->getPosition().x << "\n";
 			
 			//While application is running
 			while( !quit )

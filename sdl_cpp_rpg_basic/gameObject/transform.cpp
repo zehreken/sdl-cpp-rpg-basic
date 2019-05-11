@@ -1,49 +1,55 @@
 #include "transform.hpp"
 
-Transform::Transform()
+Transform::Transform(GameObject *p_parent)
 {
-	position = {0, 0};
-	scale = {1, 1};
+	_p_parent = p_parent;
+	_position = {0, 0};
+	_scale = {1, 1};
+}
+
+GameObject *Transform::p_parent()
+{
+	return _p_parent;
 }
 
 void Transform::setPosition(float x, float y)
 {
-	position = {x, y};
+	_position = {x, y};
 }
 
 void Transform::setPosition(Vector2 position)
 {
-	this->position = position;
+	_position = position;
 }
 
 void Transform::translate(float x, float y)
 {
-	position.x += x;
-	position.y += y;
+	_position.x += x;
+	_position.y += y;
 }
 
 void Transform::translate(Vector2 deltaPosition)
 {
-	position.x += deltaPosition.x;
-	position.y += deltaPosition.y;
+	_position.x += deltaPosition.x;
+	_position.y += deltaPosition.y;
 }
 
 Vector2 Transform::getPosition()
 {
-	return position;
+	return _position;
 }
 
 void Transform::setScale(float x, float y)
 {
-	scale = {x, y};
+	_scale = {x, y};
 }
 
 void Transform::setScale(Vector2 scale)
 {
-	this->scale = scale;
+	_scale = scale;
 }
 
 Vector2 Transform::getScale()
 {
-	return scale;
+	return _scale;
 }
