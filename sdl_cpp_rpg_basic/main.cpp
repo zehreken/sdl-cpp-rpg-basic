@@ -3,7 +3,7 @@
 #include <SDL2_image/SDL_image.h>
 #include <iostream>
 #include "primitives/primitives.hpp"
-#include "primitives/textureWrapper.hpp"
+#include "primitives/spriteSheet.hpp"
 #include "utils/textureUnpacker.hpp"
 #include "grid/grid.hpp"
 #include "grid/noiseVisualizer.hpp"
@@ -32,7 +32,7 @@ SDL_Window *window = NULL;
 SDL_Renderer *renderer = NULL;
 
 // Current displayed texture
-LTexture texture;
+SpriteSheet texture;
 
 enum KeyPressSurfaces
 {
@@ -115,7 +115,7 @@ SDL_Texture *loadTexture(std::string path)
 	return newTexture;
 }
 
-LTexture colorKeyTexture;
+SpriteSheet colorKeyTexture;
 bool loadMedia()
 {
 	//Loading success flag
@@ -180,13 +180,13 @@ int main( int argc, char* args[] )
 			//Event handler
 			SDL_Event e;
 			
-			grid_init(renderer);
+			initGrid(renderer);
 			noiseInit();
 			
+			SpriteSheet sp;
 			
-			
-			GameObject go(renderer);
-			go.p_view()->p_parent()->p_view()->p_parent()->p_transform()->p_parent()->p_view()->p_parent()->p_transform()->setPosition(3, 2);
+			GameObject go;
+			go.p_view()->p_parent()->p_view()->p_parent()->p_transform()->p_parent()->p_view()->p_parent()->p_transform()->setPosition(5, 2);
 			std::cout << "testing: " << go.p_view()->p_parent()->p_transform()->getPosition().x << "\n";
 			
 			//While application is running
@@ -238,7 +238,7 @@ int main( int argc, char* args[] )
 				rect.h = 16;
 //				texture.render(renderer, 0, 0, &rect);
 				
-				grid_render(renderer);
+				renderGrid(renderer);
 				
 //				noiseDraw(renderer);
 				

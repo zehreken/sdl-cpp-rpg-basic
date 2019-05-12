@@ -8,14 +8,19 @@
 class GameObject
 {
 public:
-	GameObject(SDL_Renderer *p_renderer);
-	void update(float deltaTime);
+	GameObject();
+//	GameObject(SDL_Renderer *p_renderer, SpriteSheet *p_spriteSheet);
+	void update(float deltaTime, SDL_Renderer *p_renderer);
 	Transform *p_transform();
-	View *p_view();
+	View *p_view(); // obsolete
+	SDL_Renderer *p_renderer();
+	void setSpriteSheet(SpriteSheet *p_spriteSheet);
+	SpriteSheet *p_spriteSheet();
 private:
 	Transform _transform;
-	View _view;
+	View _view; // obsolete
 	SDL_Renderer *_p_renderer;
+	SpriteSheet *_p_spriteSheet;
 };
 
 #endif /* gameObject_hpp */

@@ -1,18 +1,18 @@
-#include "textureWrapper.hpp"
+#include "spriteSheet.hpp"
 
-LTexture::LTexture()
+SpriteSheet::SpriteSheet()
 {
 	texture = NULL;
 	width = 0;
 	height = 0;
 }
 
-LTexture::~LTexture()
+SpriteSheet::~SpriteSheet()
 {
 	free();
 }
 
-bool LTexture::loadFromFile(SDL_Renderer *renderer, std::string path)
+bool SpriteSheet::loadFromFile(SDL_Renderer *renderer, std::string path)
 {
 	free();
 	
@@ -43,7 +43,7 @@ bool LTexture::loadFromFile(SDL_Renderer *renderer, std::string path)
 	return texture != NULL;
 }
 
-void LTexture::free()
+void SpriteSheet::free()
 {
 	//Free texture if it exists
 	if(texture != NULL)
@@ -55,7 +55,7 @@ void LTexture::free()
 	}
 }
 
-void LTexture::render(SDL_Renderer *renderer, int x, int y, SDL_Rect *clipRect)
+void SpriteSheet::render(SDL_Renderer *renderer, int x, int y, SDL_Rect *clipRect)
 {
 	//Set rendering space and render to screen
 	SDL_Rect renderRect = { x, y, width, height };
@@ -71,12 +71,12 @@ void LTexture::render(SDL_Renderer *renderer, int x, int y, SDL_Rect *clipRect)
 	SDL_RenderCopy(renderer, texture, clipRect, &renderRect);
 }
 
-int LTexture::getWidth()
+int SpriteSheet::getWidth()
 {
 	return width;
 }
 
-int LTexture::getHeight()
+int SpriteSheet::getHeight()
 {
 	return height;
 }

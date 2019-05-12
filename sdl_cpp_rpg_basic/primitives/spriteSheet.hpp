@@ -1,14 +1,14 @@
-#ifndef textureWrapper_hpp
-#define textureWrapper_hpp
+#ifndef spriteSheet_hpp
+#define spriteSheet_hpp
 #include <iostream>
 #include <SDL2_image/SDL_image.h>
 
-class LTexture
+class SpriteSheet
 {
 public:
-	LTexture();
+	SpriteSheet();
 	
-	~LTexture();
+	~SpriteSheet();
 	
 	bool loadFromFile(SDL_Renderer *renderer, std::string path);
 	
@@ -25,4 +25,4 @@ private:
 	int height;
 };
 
-#endif /* textureWrapper_hpp */
+#endif /* spriteSheet_hpp */
