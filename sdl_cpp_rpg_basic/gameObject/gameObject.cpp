@@ -5,6 +5,11 @@ GameObject::GameObject() : _transform(this), _view(this)
 	
 }
 
+GameObject::GameObject(SDL_Renderer *p_renderer, SpriteSheet *p_spriteSheet) : _transform(this), _view(this)
+{
+	
+}
+
 void GameObject::update(float deltaTime, SDL_Renderer *p_renderer)
 {
 	_view.render(p_renderer);
