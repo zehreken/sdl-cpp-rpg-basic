@@ -55,7 +55,7 @@ void initGrid(SDL_Renderer *p_renderer)
 	}
 }
 
-void renderGrid(SDL_Renderer *renderer)
+void renderGrid(SDL_Renderer *p_renderer)
 {
 	for (int row = 0; row < ROW_COUNT; row++)
 	{
@@ -69,7 +69,7 @@ void renderGrid(SDL_Renderer *renderer)
 //			clipRect.w = 16;
 //			clipRect.h = 16;
 //			tile->ltexture->render(renderer, column * 16 + (int)gridPos.x, row * 16 + (int)gridPos.y, &clipRect);
-			tile->update(0, renderer);
+			tile->update(0, p_renderer);
 		}
 	}
 }
