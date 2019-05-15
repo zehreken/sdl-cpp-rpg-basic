@@ -9,7 +9,6 @@ class GameObject
 {
 public:
 	GameObject();
-	GameObject(SDL_Renderer *p_renderer, SpriteSheet *p_spriteSheet);
 	void update(float deltaTime, SDL_Renderer *p_renderer);
 	Transform *p_transform();
 	View *p_view(); // obsolete

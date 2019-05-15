@@ -23,7 +23,7 @@ void initGrid(SDL_Renderer *p_renderer)
 			
 			tile->setSpriteSheet(&spriteSheet);
 			tile->p_transform()->setParent(&gridTransform);
-			tile->p_transform()->setPosition(column, row);
+			tile->p_transform()->setPosition(column * 16, row * 16);
 			double noise = pN.noise(column / (double)COLUMN_COUNT, row / (double)ROW_COUNT, 0);
 			if (noise < 0.35)
 				tile->p_view()->clipRect = {0, 0, 16, 16};

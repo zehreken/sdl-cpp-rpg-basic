@@ -205,19 +205,19 @@ int main( int argc, char* args[] )
 						switch (e.key.keysym.sym) {
 							case SDLK_w:
 								std::cout << "up" << '\n';
-								setGridPos({0, 16});
+								setGridPos({0, 1});
 								break;
 							case SDLK_a:
 								std::cout << "left" << '\n';
-								setGridPos({16, 0});
+								setGridPos({1, 0});
 								break;
 							case SDLK_s:
 								std::cout << "down" << '\n';
-								setGridPos({0, -16});
+								setGridPos({0, -1});
 								break;
 							case SDLK_d:
 								std::cout << "right" << '\n';
-								setGridPos({-16, 0});
+								setGridPos({-1, 0});
 								break;
 							default:
 								break;
