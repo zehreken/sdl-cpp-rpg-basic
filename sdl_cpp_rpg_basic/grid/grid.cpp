@@ -7,12 +7,12 @@ const int ROW_COUNT = 120;
 SpriteSheet spriteSheet;
 GameObject tiles[COLUMN_COUNT * ROW_COUNT];
 
-Vector2 gridPos;
 PerlinNoise pN(0);
+
+Transform gridTransform;
 
 void initGrid(SDL_Renderer *p_renderer)
 {
-	gridPos = {0, 0};
 	spriteSheet.loadFromFile(p_renderer, "map_sheet.png");
 	
 	for (int row = 0; row < ROW_COUNT; row++)
@@ -22,6 +22,7 @@ void initGrid(SDL_Renderer *p_renderer)
 			GameObject *tile = &tiles[row * COLUMN_COUNT + column];
 			
 			tile->setSpriteSheet(&spriteSheet);
+			tile->p_transform()->setParent(&gridTransform);
 			tile->p_transform()->setPosition(column, row);
 			double noise = pN.noise(column / (double)COLUMN_COUNT, row / (double)ROW_COUNT, 0);
 			if (noise < 0.35)
@@ -62,8 +63,9 @@ void renderGrid(SDL_Renderer *p_renderer)
 
 void setGridPos(Vector2 delta)
 {
-	gridPos.x += delta.x;
-	gridPos.y += delta.y;
+//	gridPos.x += delta.x;
+//	gridPos.y += delta.y;
+	gridTransform.translate(delta.x, delta.y);
 }
 
 void closeGrid()
