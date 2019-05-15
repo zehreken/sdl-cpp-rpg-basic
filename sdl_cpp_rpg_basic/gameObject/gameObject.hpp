@@ -13,13 +13,11 @@ public:
 	void update(float deltaTime, SDL_Renderer *p_renderer);
 	Transform *p_transform();
 	View *p_view(); // obsolete
-	SDL_Renderer *p_renderer();
 	void setSpriteSheet(SpriteSheet *p_spriteSheet);
 	SpriteSheet *p_spriteSheet();
 private:
 	Transform _transform;
 	View _view; // obsolete
-	SDL_Renderer *_p_renderer;
 	SpriteSheet *_p_spriteSheet;
 };
 

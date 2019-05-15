@@ -25,11 +25,6 @@ View *GameObject::p_view()
 	return &_view;
 }
 
-SDL_Renderer *GameObject::p_renderer()
-{
-	return _p_renderer;
-}
-
 void GameObject::setSpriteSheet(SpriteSheet *p_spriteSheet)
 {
 	_p_spriteSheet = p_spriteSheet;
