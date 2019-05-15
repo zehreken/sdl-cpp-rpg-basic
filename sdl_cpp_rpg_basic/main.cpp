@@ -186,8 +186,8 @@ int main( int argc, char* args[] )
 			SpriteSheet sp;
 			
 			GameObject go;
-			go.p_view()->p_parent()->p_view()->p_parent()->p_transform()->p_parent()->p_view()->p_parent()->p_transform()->setPosition(5, 2);
-			std::cout << "testing: " << go.p_view()->p_parent()->p_transform()->getPosition().x << "\n";
+			go.p_view()->p_gameObject()->p_view()->p_gameObject()->p_transform()->p_gameObject()->p_view()->p_gameObject()->p_transform()->setPosition(5, 2);
+			std::cout << "testing: " << go.p_view()->p_gameObject()->p_transform()->getPosition().x << "\n";
 			
 			//While application is running
 			while( !quit )

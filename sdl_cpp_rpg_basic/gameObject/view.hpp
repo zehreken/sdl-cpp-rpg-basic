@@ -10,13 +10,13 @@ class GameObject; // This is to show View that GameObject exists
 class View
 {
 public:
-	View(GameObject *p_parent);
+	View(GameObject *p_gameObject);
 	~View();
 	void render(SDL_Renderer *p_renderer);
-	GameObject *p_parent();
+	GameObject *p_gameObject();
 	SDL_Rect clipRect;
 private:
-	GameObject *_p_parent;
+	GameObject *_p_gameObject;
 	IntVector2 size;
 };
 

@@ -7,7 +7,7 @@ class GameObject;
 class Transform
 {
 public:
-	Transform(GameObject *p_parent);
+	Transform(GameObject *p_gameObject);
 	void setPosition(float x, float y);
 	void setPosition(Vector2 position);
 	void translate(float x, float y);
@@ -16,9 +16,9 @@ public:
 	void setScale(float x, float y);
 	void setScale(Vector2 scale);
 	Vector2 getScale();
-	GameObject *p_parent();
+	GameObject *p_gameObject();
 private:
-	GameObject *_p_parent;
+	GameObject *_p_gameObject;
 	Vector2 _position;
 	Vector2 _scale;
 };

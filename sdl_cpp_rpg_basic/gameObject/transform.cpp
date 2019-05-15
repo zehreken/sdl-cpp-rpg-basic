@@ -1,15 +1,15 @@
 #include "transform.hpp"
 
-Transform::Transform(GameObject *p_parent)
+Transform::Transform(GameObject *p_gameObject)
 {
-	_p_parent = p_parent;
+	_p_gameObject = p_gameObject;
 	_position = {0, 0};
 	_scale = {1, 1};
 }
 
-GameObject *Transform::p_parent()
+GameObject *Transform::p_gameObject()
 {
-	return _p_parent;
+	return _p_gameObject;
 }
 
 void Transform::setPosition(float x, float y)
