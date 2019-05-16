@@ -8,6 +8,7 @@
 #include "grid/grid.hpp"
 #include "grid/noiseVisualizer.hpp"
 #include "gameObject/gameObject.hpp"
+#include "utils/timeUtils.hpp"
 
 // Screen dimension constants
 const int SCREEN_WIDTH = 960;
@@ -150,6 +151,7 @@ void close()
 	SDL_Quit();
 }
 
+IntVector2 direction(0, 0);
 int main( int argc, char* args[] )
 {
 	int a = 12;
@@ -180,6 +182,8 @@ int main( int argc, char* args[] )
 			//Event handler
 			SDL_Event e;
 			
+			initTimeUtils();
+			
 			initGrid(renderer);
 			noiseInit();
 			
@@ -202,28 +206,52 @@ int main( int argc, char* args[] )
 					}
 					else if (e.type == SDL_KEYDOWN)
 					{
-						switch (e.key.keysym.sym) {
+						switch (e.key.keysym.sym)
+						{
 							case SDLK_w:
-								std::cout << "up" << '\n';
-								setGridPos({0, 1});
+//								std::cout << "up" << '\n';
+//								setGridPos({0, 1});
+								direction.y = -1;
 								break;
 							case SDLK_a:
-								std::cout << "left" << '\n';
-								setGridPos({1, 0});
+//								std::cout << "left" << '\n';
+//								setGridPos({1, 0});
+								direction.x = -1;
 								break;
 							case SDLK_s:
-								std::cout << "down" << '\n';
-								setGridPos({0, -1});
+//								std::cout << "down" << '\n';
+//								setGridPos({0, -1});
+								direction.y = 1;
 								break;
 							case SDLK_d:
-								std::cout << "right" << '\n';
-								setGridPos({-1, 0});
+//								std::cout << "right" << '\n';
+//								setGridPos({-1, 0});
+								direction.x = 1;
 								break;
-							default:
+						}
+					}
+					else if (e.type == SDL_KEYUP)
+					{
+						switch (e.key.keysym.sym) {
+							case SDLK_w:
+								direction.y = 0;
+								break;
+							case SDLK_a:
+								direction.x = 0;
+								break;
+							case SDLK_s:
+								direction.y = 0;
+								break;
+							case SDLK_d:
+								direction.x = 0;
 								break;
 						}
 					}
 				}
+				
+				updateTimeUtils();
+				
+				moveGrid(direction);
 				
 				// Clear screen
 				SDL_RenderClear(renderer);

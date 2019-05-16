@@ -10,6 +10,7 @@
 		30011DB32285F1B1005F906E /* transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30011DB12285F1B1005F906E /* transform.cpp */; };
 		30011DB62285F408005F906E /* view.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30011DB42285F408005F906E /* view.cpp */; };
 		3003F7F4228356F9000AA736 /* noiseVisualizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3003F7F2228356F9000AA736 /* noiseVisualizer.cpp */; };
+		301017CB228DED9C00070DCF /* timeUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 301017C9228DED9C00070DCF /* timeUtils.cpp */; };
 		3068FFFE2280B712003611A0 /* grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3068FFFC2280B712003611A0 /* grid.cpp */; };
 		306A98F2227CC04F0018DF21 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 306A98F1227CC04F0018DF21 /* main.cpp */; };
 		306DE6B122849DF900B2C1F2 /* gameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 306DE6AF22849DF800B2C1F2 /* gameObject.cpp */; };
@@ -40,6 +41,8 @@
 		30011DB52285F408005F906E /* view.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = view.hpp; sourceTree = "<group>"; };
 		3003F7F2228356F9000AA736 /* noiseVisualizer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = noiseVisualizer.cpp; sourceTree = "<group>"; };
 		3003F7F3228356F9000AA736 /* noiseVisualizer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = noiseVisualizer.hpp; sourceTree = "<group>"; };
+		301017C9228DED9C00070DCF /* timeUtils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = timeUtils.cpp; sourceTree = "<group>"; };
+		301017CA228DED9C00070DCF /* timeUtils.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = timeUtils.hpp; sourceTree = "<group>"; };
 		3068FFFC2280B712003611A0 /* grid.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = grid.cpp; sourceTree = "<group>"; };
 		3068FFFD2280B712003611A0 /* grid.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = grid.hpp; sourceTree = "<group>"; };
 		306A98EE227CC04F0018DF21 /* sdl_cpp_rpg_basic */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sdl_cpp_rpg_basic; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +153,8 @@
 			children = (
 				30DAED68227F778B0022B83F /* textureUnpacker.cpp */,
 				30DAED69227F778B0022B83F /* textureUnpacker.hpp */,
+				301017C9228DED9C00070DCF /* timeUtils.cpp */,
+				301017CA228DED9C00070DCF /* timeUtils.hpp */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 				306A98F2227CC04F0018DF21 /* main.cpp in Sources */,
 				30011DB32285F1B1005F906E /* transform.cpp in Sources */,
 				30DAED66227F34190022B83F /* spriteSheet.cpp in Sources */,
+				301017CB228DED9C00070DCF /* timeUtils.cpp in Sources */,
 				3003F7F4228356F9000AA736 /* noiseVisualizer.cpp in Sources */,
 				30A03328228214BC004442C5 /* perlinNoise.cpp in Sources */,
 				30DAED6A227F778B0022B83F /* textureUnpacker.cpp in Sources */,

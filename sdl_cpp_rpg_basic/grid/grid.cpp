@@ -1,6 +1,7 @@
 #include "grid.hpp"
 #include "perlinNoise.hpp"
 #include "../gameObject/gameObject.hpp"
+#include "../utils/timeUtils.hpp"
 
 const int COLUMN_COUNT = 200;
 const int ROW_COUNT = 120;
@@ -56,9 +57,16 @@ void renderGrid(SDL_Renderer *p_renderer)
 //			clipRect.w = 16;
 //			clipRect.h = 16;
 //			tile->ltexture->render(renderer, column * 16 + (int)gridPos.x, row * 16 + (int)gridPos.y, &clipRect);
-			tile->update(0, p_renderer);
+			tile->update(getDeltaTimeInSeconds(), p_renderer);
 		}
 	}
+}
+
+void moveGrid(IntVector2 direction)
+{
+	const float SPEED = 100;
+	std::cout << direction.x << " " << direction.y << "\n";
+	gridTransform.translate(direction.x * SPEED * getDeltaTimeInSeconds(), direction.y * SPEED * getDeltaTimeInSeconds());
 }
 
 void setGridPos(Vector2 delta)

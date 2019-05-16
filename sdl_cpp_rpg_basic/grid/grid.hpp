@@ -6,6 +6,7 @@
 
 void initGrid(SDL_Renderer *renderer);
 void renderGrid(SDL_Renderer *renderer);
+void moveGrid(IntVector2 direction);
 void setGridPos(Vector2 delta);
 void closeGrid();
 
