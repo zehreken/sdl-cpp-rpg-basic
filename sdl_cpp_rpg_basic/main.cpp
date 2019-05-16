@@ -211,22 +211,22 @@ int main( int argc, char* args[] )
 							case SDLK_w:
 //								std::cout << "up" << '\n';
 //								setGridPos({0, 1});
-								direction.y = -1;
+								direction.y = 1;
 								break;
 							case SDLK_a:
 //								std::cout << "left" << '\n';
 //								setGridPos({1, 0});
-								direction.x = -1;
+								direction.x = 1;
 								break;
 							case SDLK_s:
 //								std::cout << "down" << '\n';
 //								setGridPos({0, -1});
-								direction.y = 1;
+								direction.y = -1;
 								break;
 							case SDLK_d:
 //								std::cout << "right" << '\n';
 //								setGridPos({-1, 0});
-								direction.x = 1;
+								direction.x = -1;
 								break;
 						}
 					}

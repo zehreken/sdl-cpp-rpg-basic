@@ -64,7 +64,7 @@ void renderGrid(SDL_Renderer *p_renderer)
 
 void moveGrid(IntVector2 direction)
 {
-	const float SPEED = 100;
+	const float SPEED = 500;
 	std::cout << direction.x << " " << direction.y << "\n";
 	gridTransform.translate(direction.x * SPEED * getDeltaTimeInSeconds(), direction.y * SPEED * getDeltaTimeInSeconds());
 }
