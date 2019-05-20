@@ -64,8 +64,8 @@ void SpriteSheet::render(SDL_Renderer *renderer, int x, int y, SDL_Rect *clipRec
 	{
 		// The multipliers scales the texture
 		// Texture is scaled but clipping is applied on the original resolution
-		renderRect.w = clipRect->w * 1;
-		renderRect.h = clipRect->h * 1;
+		renderRect.w = clipRect->w * 2;
+		renderRect.h = clipRect->h * 2;
 	}
 	
 	SDL_RenderCopy(renderer, texture, clipRect, &renderRect);
