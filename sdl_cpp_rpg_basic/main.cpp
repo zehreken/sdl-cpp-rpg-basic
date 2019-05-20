@@ -280,7 +280,7 @@ int main( int argc, char* args[] )
 				SDL_RenderPresent(p_renderer);
 				
 				// Delay a bit to release CPU
-				SDL_Delay(10);
+				SDL_Delay(16);
 			}
 		}
 	}

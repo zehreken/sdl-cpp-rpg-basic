@@ -11,7 +11,7 @@ void initCharacterManager(SDL_Renderer *p_renderer)
 	
 	character.setSpriteSheet(&characterSheet);
 	character.p_transform()->setPosition(0, 0);
-	character.p_view()->clipRect = {0, 0, 16, 16};
+	character.p_view()->clipRect = {0, 17 * 5, 16, 16};
 }
 
 void renderCharacters(SDL_Renderer *p_renderer)
