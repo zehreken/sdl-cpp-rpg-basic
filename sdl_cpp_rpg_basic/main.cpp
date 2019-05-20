@@ -9,6 +9,7 @@
 #include "grid/noiseVisualizer.hpp"
 #include "gameObject/gameObject.hpp"
 #include "utils/timeUtils.hpp"
+#include "character/characterManager.hpp"
 
 // Screen dimension constants
 const int SCREEN_WIDTH = 960;
@@ -27,10 +28,10 @@ void close();
 SDL_Texture *loadTexture(std::string path);
 
 // The window we'll be rendering to
-SDL_Window *window = NULL;
+SDL_Window *p_window = NULL;
 
 // The window renderer
-SDL_Renderer *renderer = NULL;
+SDL_Renderer *p_renderer = NULL;
 
 // Current displayed texture
 SpriteSheet texture;
@@ -59,23 +60,23 @@ bool init()
 	else
 	{
 		//Create window
-		window = SDL_CreateWindow("sdl_cpp_rpg_basic", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
-		if( window == NULL )
+		p_window = SDL_CreateWindow("sdl_cpp_rpg_basic", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+		if( p_window == NULL )
 		{
 			printf( "Window could not be created! SDL_Error: %s\n", SDL_GetError() );
 			success = false;
 		}
 		else
 		{
-			renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-			if (renderer == NULL)
+			p_renderer = SDL_CreateRenderer(p_window, -1, SDL_RENDERER_ACCELERATED);
+			if (p_renderer == NULL)
 			{
 				printf("Renderer could not be created! SDL Error: %s\n", SDL_GetError());
 				success = false;
 			}
 			else
 			{
-				SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+				SDL_SetRenderDrawColor(p_renderer, 0, 0, 0, 255);
 				
 				int imgFlags = IMG_INIT_PNG;
 				if (!(IMG_Init(imgFlags) & imgFlags))
@@ -103,7 +104,7 @@ SDL_Texture *loadTexture(std::string path)
 	else
 	{
 		//Create texture from surface pixels
-		newTexture = SDL_CreateTextureFromSurface(renderer, newSurface);
+		newTexture = SDL_CreateTextureFromSurface(p_renderer, newSurface);
 		if(newTexture == NULL)
 		{
 			printf( "Unable to create texture from %s! SDL Error: %s\n", path.c_str(), SDL_GetError() );
@@ -123,7 +124,7 @@ bool loadMedia()
 	bool success = true;
 	
 	//Load splash image
-	if(!texture.loadFromFile(renderer, "map_sheet.png"))
+	if(!texture.loadFromFile(p_renderer, "map_sheet.png"))
 	{
 		printf( "Unable to load image %s! SDL Error: %s\n", "map_sheet.png", SDL_GetError() );
 		success = false;
@@ -142,10 +143,10 @@ void close()
 	colorKeyTexture.free();
 	texture.free();
 	
-	SDL_DestroyRenderer(renderer);
-	renderer = NULL;
-	SDL_DestroyWindow(window);
-	window = NULL;
+	SDL_DestroyRenderer(p_renderer);
+	p_renderer = NULL;
+	SDL_DestroyWindow(p_window);
+	p_window = NULL;
 	
 	IMG_Quit();
 	SDL_Quit();
@@ -184,7 +185,9 @@ int main( int argc, char* args[] )
 			
 			initTimeUtils();
 			
-			initGrid(renderer);
+			initGrid(p_renderer);
+			
+			initCharacterManager(p_renderer);
 			noiseInit();
 			
 			SpriteSheet sp;
@@ -211,22 +214,22 @@ int main( int argc, char* args[] )
 							case SDLK_w:
 //								std::cout << "up" << '\n';
 //								setGridPos({0, 1});
-								direction.y = 1;
+								direction.y = -1;
 								break;
 							case SDLK_a:
 //								std::cout << "left" << '\n';
 //								setGridPos({1, 0});
-								direction.x = 1;
+								direction.x = -1;
 								break;
 							case SDLK_s:
 //								std::cout << "down" << '\n';
 //								setGridPos({0, -1});
-								direction.y = -1;
+								direction.y = 1;
 								break;
 							case SDLK_d:
 //								std::cout << "right" << '\n';
 //								setGridPos({-1, 0});
-								direction.x = -1;
+								direction.x = 1;
 								break;
 						}
 					}
@@ -251,27 +254,30 @@ int main( int argc, char* args[] )
 				
 				updateTimeUtils();
 				
-				moveGrid(direction);
+//				moveGrid(direction);
+				moveCharacter(direction);
 				
 				// Clear screen
-				SDL_RenderClear(renderer);
+				SDL_RenderClear(p_renderer);
 				
 //				SDL_Rect clipRect = {0, 0, 16, 16};
 //				colorKeyTexture.render(renderer, 0, 0, &clipRect);
 				
 				// Render texture to screen
-				SDL_Rect rect = rects[13];
-				rect.x = rect.y = 0;
-				rect.w = 16;
-				rect.h = 16;
+//				SDL_Rect rect = rects[13];
+//				rect.x = rect.y = 0;
+//				rect.w = 16;
+//				rect.h = 16;
 //				texture.render(renderer, 0, 0, &rect);
 				
-				renderGrid(renderer);
+				renderGrid(p_renderer);
+				
+				renderCharacters(p_renderer);
 				
 //				noiseDraw(renderer);
 				
 				// Update screen
-				SDL_RenderPresent(renderer);
+				SDL_RenderPresent(p_renderer);
 				
 				// Delay a bit to release CPU
 				SDL_Delay(10);

@@ -20,6 +20,7 @@
 		30DAED6A227F778B0022B83F /* textureUnpacker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30DAED68227F778B0022B83F /* textureUnpacker.cpp */; };
 		30FE463F227D9BF7008E7E29 /* primitives.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30FE463D227D9BF7008E7E29 /* primitives.cpp */; };
 		30FE4641227DC974008E7E29 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30FE4640227DC974008E7E29 /* SDL2_image.framework */; };
+		30FF3E2D22932BF300CBB8AB /* characterManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30FF3E2B22932BF300CBB8AB /* characterManager.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,6 +60,8 @@
 		30FE463D227D9BF7008E7E29 /* primitives.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = primitives.cpp; sourceTree = "<group>"; };
 		30FE463E227D9BF7008E7E29 /* primitives.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = primitives.hpp; sourceTree = "<group>"; };
 		30FE4640227DC974008E7E29 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
+		30FF3E2B22932BF300CBB8AB /* characterManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = characterManager.cpp; sourceTree = "<group>"; };
+		30FF3E2C22932BF300CBB8AB /* characterManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = characterManager.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,21 +112,14 @@
 		306A98F0227CC04F0018DF21 /* sdl_cpp_rpg_basic */ = {
 			isa = PBXGroup;
 			children = (
+				30FF3E2A22932BDE00CBB8AB /* character */,
 				306DE6AE22849DE100B2C1F2 /* gameObject */,
-				306DE6AD22849DCB00B2C1F2 /* character */,
 				3068FFFB2280B701003611A0 /* grid */,
 				30DAED67227F774E0022B83F /* utils */,
 				30FE463C227D9BA7008E7E29 /* primitives */,
 				306A98F1227CC04F0018DF21 /* main.cpp */,
 			);
 			path = sdl_cpp_rpg_basic;
-			sourceTree = "<group>";
-		};
-		306DE6AD22849DCB00B2C1F2 /* character */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = character;
 			sourceTree = "<group>";
 		};
 		306DE6AE22849DE100B2C1F2 /* gameObject */ = {
@@ -168,6 +164,15 @@
 				30DAED65227F34190022B83F /* spriteSheet.hpp */,
 			);
 			path = primitives;
+			sourceTree = "<group>";
+		};
+		30FF3E2A22932BDE00CBB8AB /* character */ = {
+			isa = PBXGroup;
+			children = (
+				30FF3E2B22932BF300CBB8AB /* characterManager.cpp */,
+				30FF3E2C22932BF300CBB8AB /* characterManager.hpp */,
+			);
+			path = character;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +236,7 @@
 				30011DB32285F1B1005F906E /* transform.cpp in Sources */,
 				30DAED66227F34190022B83F /* spriteSheet.cpp in Sources */,
 				301017CB228DED9C00070DCF /* timeUtils.cpp in Sources */,
+				30FF3E2D22932BF300CBB8AB /* characterManager.cpp in Sources */,
 				3003F7F4228356F9000AA736 /* noiseVisualizer.cpp in Sources */,
 				30A03328228214BC004442C5 /* perlinNoise.cpp in Sources */,
 				30DAED6A227F778B0022B83F /* textureUnpacker.cpp in Sources */,
