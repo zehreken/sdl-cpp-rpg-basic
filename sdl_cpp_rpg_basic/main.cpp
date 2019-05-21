@@ -257,6 +257,13 @@ int main( int argc, char* args[] )
 //				moveGrid(direction);
 				moveCharacter(direction);
 				
+				Vector2 deltaPos = {getCharacterPosition().x - getCameraPosition().x, getCharacterPosition().y - getCameraPosition().y};
+				deltaPos.x -= SCREEN_WIDTH / 2;
+				deltaPos.y -= SCREEN_HEIGHT / 2;
+				deltaPos.x /= 20;
+				deltaPos.y /= 20;
+				translateCamera(deltaPos);
+				
 				// Clear screen
 				SDL_RenderClear(p_renderer);
 				

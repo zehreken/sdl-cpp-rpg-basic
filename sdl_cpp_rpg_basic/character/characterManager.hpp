@@ -7,5 +7,6 @@
 void initCharacterManager(SDL_Renderer *p_renderer);
 void renderCharacters(SDL_Renderer *p_renderer);
 void moveCharacter(IntVector2 direction);
+Vector2 getCharacterPosition();
 
 #endif /* characterManager_hpp */

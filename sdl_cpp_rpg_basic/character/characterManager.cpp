@@ -21,6 +21,11 @@ void renderCharacters(SDL_Renderer *p_renderer)
 
 void moveCharacter(IntVector2 direction)
 {
-	const float SPEED = 100;
+	const float SPEED = 200;
 	character.p_transform()->translate(direction.x * SPEED * getDeltaTimeInSeconds(), direction.y * SPEED * getDeltaTimeInSeconds());
+}
+
+Vector2 getCharacterPosition()
+{
+	return character.p_transform()->getPosition();
 }

@@ -8,9 +8,12 @@ const int ROW_COUNT = 120;
 SpriteSheet spriteSheet;
 GameObject tiles[COLUMN_COUNT * ROW_COUNT];
 
-PerlinNoise pN(0);
+PerlinNoise pN(5);
 
 Transform gridTransform;
+
+// Camera
+Transform cameraTransform;
 
 void initGrid(SDL_Renderer *p_renderer)
 {
@@ -72,6 +75,22 @@ void moveGrid(IntVector2 direction)
 		|| (direction.y > 0 && gridTransform.getPosition().y >= 0))
 		return;
 	gridTransform.translate(direction.x * SPEED * getDeltaTimeInSeconds(), direction.y * SPEED * getDeltaTimeInSeconds());
+}
+
+void moveCamera(IntVector2 direction)
+{
+	float speed = 200 * getDeltaTimeInSeconds();
+	cameraTransform.translate(direction.x * speed, direction.y * speed);
+}
+
+void translateCamera(Vector2 delta)
+{
+	cameraTransform.translate(delta);
+}
+
+Vector2 getCameraPosition()
+{
+	return cameraTransform.getPosition();
 }
 
 void setGridPos(Vector2 delta)
