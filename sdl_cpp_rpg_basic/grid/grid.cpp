@@ -8,7 +8,7 @@ const int ROW_COUNT = 120;
 SpriteSheet spriteSheet;
 GameObject tiles[COLUMN_COUNT * ROW_COUNT];
 
-PerlinNoise pN(5);
+PerlinNoise pN(1);
 
 Transform gridTransform;
 
