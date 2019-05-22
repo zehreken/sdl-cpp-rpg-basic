@@ -124,9 +124,10 @@ bool loadMedia()
 	bool success = true;
 	
 	//Load splash image
-	if(!texture.loadFromFile(p_renderer, "map_sheet.png"))
+	std::string path = "assets/map_sheet.png";
+	if(!texture.loadFromFile(p_renderer, path))
 	{
-		printf( "Unable to load image %s! SDL Error: %s\n", "map_sheet.png", SDL_GetError() );
+		printf( "Unable to load image %s! SDL Error: %s\n", path.c_str(), SDL_GetError() );
 		success = false;
 	}
 	

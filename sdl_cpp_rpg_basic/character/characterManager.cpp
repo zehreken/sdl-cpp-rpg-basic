@@ -7,7 +7,8 @@ GameObject character;
 
 void initCharacterManager(SDL_Renderer *p_renderer)
 {
-	characterSheet.loadFromFile(p_renderer, "character_sheet.png");
+	std::string path = "assets/character_sheet.png";
+	characterSheet.loadFromFile(p_renderer, path);
 	
 	character.setSpriteSheet(&characterSheet);
 	character.p_transform()->setPosition(0, 0);

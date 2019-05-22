@@ -17,7 +17,8 @@ Transform cameraTransform;
 
 void initGrid(SDL_Renderer *p_renderer)
 {
-	spriteSheet.loadFromFile(p_renderer, "map_sheet.png");
+	std::string path = "assets/map_sheet.png";
+	spriteSheet.loadFromFile(p_renderer, path);
 	
 	for (int row = 0; row < ROW_COUNT; row++)
 	{
