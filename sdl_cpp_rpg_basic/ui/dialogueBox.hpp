@@ -5,7 +5,7 @@
 #include <iostream>
 
 void initDialogueBox();
-void showDialogueMessage(std::string message);
+void showDialogueMessage(SDL_Renderer *p_renderer, std::string message);
 void renderDialogueBox(SDL_Renderer *p_renderer);
 void closeDialogueBox();
 

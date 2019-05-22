@@ -10,6 +10,7 @@
 #include "gameObject/gameObject.hpp"
 #include "utils/timeUtils.hpp"
 #include "character/characterManager.hpp"
+#include "ui/dialogueBox.hpp"
 
 // Screen dimension constants
 const int SCREEN_WIDTH = 960;
@@ -186,6 +187,8 @@ int main( int argc, char* args[] )
 			
 			initTimeUtils();
 			
+			initDialogueBox();
+			
 			initGrid(p_renderer);
 			
 			initCharacterManager(p_renderer);
@@ -239,9 +242,11 @@ int main( int argc, char* args[] )
 						switch (e.key.keysym.sym) {
 							case SDLK_w:
 								direction.y = 0;
+								showDialogueMessage(p_renderer, "ONUR!");
 								break;
 							case SDLK_a:
 								direction.x = 0;
+								closeDialogueBox();
 								break;
 							case SDLK_s:
 								direction.y = 0;
@@ -281,6 +286,8 @@ int main( int argc, char* args[] )
 				renderGrid(p_renderer);
 				
 				renderCharacters(p_renderer);
+				
+				renderDialogueBox(p_renderer);
 				
 //				noiseDraw(renderer);
 				
