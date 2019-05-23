@@ -242,7 +242,6 @@ int main( int argc, char* args[] )
 						switch (e.key.keysym.sym) {
 							case SDLK_w:
 								direction.y = 0;
-								showDialogueMessage(p_renderer, "ONUR! tesitslhd\nasdasdasdasdasdad\nwwwwwwwwwwwwwwwww");
 								break;
 							case SDLK_a:
 								direction.x = 0;
@@ -253,6 +252,9 @@ int main( int argc, char* args[] )
 								break;
 							case SDLK_d:
 								direction.x = 0;
+								break;
+							case SDLK_e:
+								showDialogueMessage(p_renderer, "testing testing testing\nnew line new line");
 								break;
 						}
 					}
