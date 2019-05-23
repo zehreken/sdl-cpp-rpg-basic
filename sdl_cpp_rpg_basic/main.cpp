@@ -242,7 +242,7 @@ int main( int argc, char* args[] )
 						switch (e.key.keysym.sym) {
 							case SDLK_w:
 								direction.y = 0;
-								showDialogueMessage(p_renderer, "ONUR!");
+								showDialogueMessage(p_renderer, "ONUR! tesitslhd\nasdasdasdasdasdad\nwwwwwwwwwwwwwwwww");
 								break;
 							case SDLK_a:
 								direction.x = 0;
